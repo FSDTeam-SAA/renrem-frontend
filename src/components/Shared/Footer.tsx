@@ -1,6 +1,7 @@
 'use client';
 
 import { MapPin, Phone, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -10,8 +11,7 @@ export function Footer() {
           {/* Left Column - Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full bg-white"></div>
-              <span className="text-lg font-semibold">LOGO</span>
+                 <Image src="/logo.png" alt="Renrem Logo" width={100} height={40} className="object-contain" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Company Name</h3>
             <p className="text-sm leading-relaxed text-blue-100">
@@ -69,7 +69,7 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-blue-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-[#D9D9D94D] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-blue-100">
             © 2025 Company name. All rights reserved.
           </p>
