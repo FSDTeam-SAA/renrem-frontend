@@ -1,84 +1,37 @@
-"use client";
+import React from "react";
 
-import { Button } from "@/components/ui/button";
-import { Manrope } from "next/font/google";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["700"],
-  display: "swap",
-});
-
-export default function HomeHero() {
+function HomeHero() {
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen w-full flex items-center overflow-hidden">
-      
+    <section className="relative w-full h-[93vh]">
+
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/home-hero.png')",
-        }}
+        style={{ backgroundImage: "url('/home-hero.png')" }}
       />
 
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Dark Blue Overlay */}
+      {/* <div className="absolute inset-0 bg-[#19191 966]/10" /> */}
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 py-16">
-        <div className="max-w-2xl">
+      <div className="relative z-10 max-w-5xl mx-auto py-[11%]">
 
-          {/* Title */}
-          <h1
-            className={`${manrope.className}
-            text-[36px]
-            sm:text-[48px]
-            lg:text-[60px]
-            font-bold
-            leading-[120%]
-            tracking-normal
-            uppercase
-            text-white
-            mb-6`}
-          >
-            MODERN APPROACH
-            <br />
-            TO WELLNESS
-          </h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-[120%] mb-4">
+          MODERN APPROACH 
+        </h1>
+        <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-[120%] ">To Wellness</h1>
 
-          {/* Subtitle */}
-          <p
-            className={`${manrope.className}
-            text-white/90
-            text-sm
-            sm:text-base
-            lg:text-lg
-            mb-8
-            max-w-lg`}
-          >
-            A cost-effective, medically supervised solution for lasting weight loss.
-          </p>
+        <p className="text-base font-normal leading-[150%] text-[#E5E5E5] my-5">
+          A cost-effective, medically supervised solution for lasting weight loss.
+        </p>
 
-          {/* Button */}
-          <Button
-            size="lg"
-            className={`${manrope.className}
-            rounded-full
-            px-10
-            py-6
-            text-base
-            font-semibold
-            text-slate-800
-            bg-blue-300
-            hover:bg-blue-400
-            transition-all
-            duration-300`}
-          >
-            Start now
-          </Button>
+        <button className="px-8 py-3 text-[24px] leading-[120%] font-medium rounded-full bg-[#7DBAED] border-white/40 text-black backdrop-blur-sm hover:bg-[#7DBAED]/90 transition-all duration-200 w-[197px] h-[63px]">
+          Start now
+        </button>
 
-        </div>
       </div>
     </section>
   );
 }
+
+export default HomeHero;
