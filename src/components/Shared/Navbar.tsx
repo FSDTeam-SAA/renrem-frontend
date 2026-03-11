@@ -36,13 +36,12 @@ const Navbar = () => {
   ];
 
   const moreLinks = [
-    { name: 'Phase 1', href: '/phase-1' },
-    { name: 'Page 2', href: '/page-2' },
-    { name: 'Page 3', href: '/page-3' },
+    { name: 'About us', href: '/about-us' },
+    { name: 'Contact us', href: '/contact-us' },
+    { name: 'Order history', href: '/profile/order-history' },
   ];
 
   const isActiveLink = (href: string) => {
-    // Exact match for home, prefix match for other routes (so /men-hrt/x still highlights /men-hrt)
     if (href === '/') return pathname === '/';
     return pathname === href || pathname.startsWith(`${href}/`);
   };
@@ -134,9 +133,11 @@ const Navbar = () => {
             <button className="w-10 h-10 bg-blue-100 hover:bg-blue-200 rounded-full flex items-center justify-center transition-colors">
               <ShoppingCart className="w-5 h-5 text-blue-600" />
             </button>
+            <Link href='/profile/edit-profile'>
             <button className="w-10 h-10 bg-blue-100 hover:bg-blue-200 rounded-full flex items-center justify-center transition-colors">
               <User className="w-5 h-5 text-blue-600" />
             </button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}

@@ -10,18 +10,18 @@ const manrope = Manrope({
 
 export default function MernhrtHero() {
   return (
-    <section className="relative w-full min-h-[85vh] md:min-h-screen flex items-center overflow-hidden">
+    <section className="relative w-full min-h-[684px] md:min-h-screen flex items-center overflow-hidden">
 
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/menhtrt-hero.png')", // replace with your image
+          backgroundImage: "url('/menhtrt-hero.png')", 
         }}
       />
 
       {/* Left Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+      <div className="absolute inset-0 bg-[#10101063]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 w-full">
