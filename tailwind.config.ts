@@ -8,6 +8,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        xl: "1168px",
+      },
+    },
     extend: {
       fontFamily: {
         sans: ["var(--font-manrope)", "sans-serif"],

@@ -6,7 +6,7 @@ function layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <Navbar />
-      <div className="">{children}</div>
+      <div className="bg-[#EFEFEF]">{children}</div>
       <Footer />
     </div>
   );
