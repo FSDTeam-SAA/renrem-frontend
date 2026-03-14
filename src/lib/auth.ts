@@ -11,7 +11,7 @@ export const authOptions: NextAuthOptions = {
   },
   cookies: {
     sessionToken: {
-      name: "next-auth.session-token-website", // 🔹 আলাদা কুকি নাম
+      name: "next-auth.session-token-website", // 🔹 custom cookie name
       options: {
         httpOnly: true,
         sameSite: "lax",
@@ -34,7 +34,7 @@ export const authOptions: NextAuthOptions = {
 
         try {
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/user/signin`,
+            `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/auth/login`,
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -52,15 +52,17 @@ export const authOptions: NextAuthOptions = {
             throw new Error(response?.message || "Login failed");
           }
 
-          const { id, name, role, email, phonNumber } = response.data;
-          const accessToken = response.accessToken;
+          // 🔹 Updated for your API response structure
+          const userData = response.data.user;
+          const accessToken = response.data.accessToken;
 
           return {
-            id,
-            name,
-            email,
-            role,
-            phoneNumber: phonNumber,
+            id: userData._id,
+            firstName: userData.firstName,
+            lastName: userData.lastName,
+            name: `${userData.firstName} ${userData.lastName}`,
+            email: userData.email,
+            role: userData.role,
             accessToken,
           };
         } catch (error) {
@@ -79,10 +81,11 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }: { token: JWT; user?: any }) {
       if (user) {
         token.id = user.id;
+        token.firstName = user.firstName;
+        token.lastName = user.lastName;
         token.name = user.name;
         token.email = user.email;
         token.role = user.role;
-        token.phoneNumber = user.phoneNumber;
         token.accessToken = user.accessToken;
       }
       return token;
@@ -91,10 +94,11 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }: { session: any; token: JWT }) {
       session.user = {
         id: token.id,
+        firstName: token.firstName,
+        lastName: token.lastName,
         name: token.name,
         email: token.email,
         role: token.role,
-        phoneNumber: token.phoneNumber,
         accessToken: token.accessToken,
       };
       return session;

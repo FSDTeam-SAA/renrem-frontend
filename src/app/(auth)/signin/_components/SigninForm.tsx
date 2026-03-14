@@ -6,6 +6,7 @@ import Image from "next/image";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Link from "next/link";
 
 function SignInForm() {
   const router = useRouter();
@@ -157,12 +158,12 @@ function SignInForm() {
             {/* Sign Up Link */}
             <div className="text-center text-sm text-gray-600">
               Don&apos;t have an account?{" "}
-              <a
-                href="#"
+              <Link
+                href="signup"
                 className="text-blue-600 hover:text-blue-700 font-semibold"
               >
                 Sign Up
-              </a>
+              </Link>
             </div>
           </form>
         </div>
