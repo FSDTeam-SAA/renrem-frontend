@@ -4,6 +4,7 @@ import "./globals.css";
 import AppProvider from "@/provider/AppProvider";
 import AuthProvider from "@/provider/AuthProvider";
 import { Toaster } from "sonner";
+import NextTopLoader from 'nextjs-toploader'
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} font-sans antialiased`}>
+        <NextTopLoader color="#0024DA" height={3} showSpinner={false} />
         <AppProvider>
           <AuthProvider>{children}</AuthProvider>
           <Toaster richColors position="top-right" />
