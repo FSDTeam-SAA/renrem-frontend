@@ -79,13 +79,13 @@ const fetchCart = async (token?: string): Promise<CartItem[]> => {
 
   // Transform API shape → component shape
   return data.data.items.map((item) => ({
-    id: item._id,
-    productId: item.product._id,
-    name: item.product.name,
-    description: item.product.description,
-    price: item.product.price,
-    quantity: item.quantity,
-    image: item.product.image[0] || "/images/placeholder.jpg",
+    id: item?._id,
+    productId: item?.product?._id,
+    name: item?.product?.name,
+    description: item?.product?.description,
+    price: item?.product?.price,
+    quantity: item?.quantity,
+    image: item?.product?.image[0] || "/images/placeholder.jpg",
   }));
 };
 
