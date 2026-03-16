@@ -79,13 +79,13 @@ const fetchCart = async (token?: string): Promise<CartItem[]> => {
 
   // Transform API shape → component shape
   return data.data.items.map((item) => ({
-    id: item._id,
-    productId: item.product._id,
-    name: item.product.name,
-    description: item.product.description,
-    price: item.product.price,
-    quantity: item.quantity,
-    image: item.product.image[0] || "/images/placeholder.jpg",
+    id: item?._id,
+    productId: item?.product?._id,
+    name: item?.product?.name,
+    description: item?.product?.description,
+    price: item?.product?.price,
+    quantity: item?.quantity,
+    image: item?.product?.image[0] || "/images/placeholder.jpg",
   }));
 };
 
@@ -204,7 +204,7 @@ export default function CartSection() {
   };
 
   const subtotal = useMemo(() => {
-    return localItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return localItems?.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }, [localItems]);
 
   const total = subtotal;
@@ -276,7 +276,7 @@ export default function CartSection() {
                         </p>
 
                         <p className="mt-3 text-[28px] font-medium text-[#1f1f1f] sm:text-[32px] lg:text-[24px]">
-                          ${item.price.toFixed(2)}
+                          ${item?.price?.toFixed(2)}
                         </p>
 
                         <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
