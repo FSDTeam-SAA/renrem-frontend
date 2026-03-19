@@ -85,6 +85,7 @@ const Navbar = () => {
     { name: 'Weight Loss', href: `/product-categorys/${'Weight Loss'}` },
     { name: 'IV Therapy', href: `/product-categorys/${'IV Therapy'}` },
     { name: 'Peptides', href: `/product-categorys/${'Peptides'}` },
+    { name: 'Erectile Dysfunction', href: `/product-categorys/${'Erectile Dysfunction'}` },
   ];
 
   const moreLinks = [
