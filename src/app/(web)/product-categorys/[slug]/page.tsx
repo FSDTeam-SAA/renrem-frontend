@@ -44,6 +44,12 @@ const categoryHeroData: Record<
     description:
       "Peptide therapy helps your body recover, regenerate, and perform at its best—naturally and effectively.",
   },
+  "Erectile Dysfunction": {
+    bgImage: "/images/new.jpg",
+    title: "FEEL STRONGER. HEAL FASTER.",
+    description:
+      "Peptide therapy helps your body recover, regenerate, and perform at its best—naturally and effectively.",
+  },
 };
 
 // ─── Skeleton Components ──────────────────────────────────────────────────────
